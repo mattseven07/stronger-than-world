@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://gilq7elgtrmw"]
+[gd_scene load_steps=29 format=4 uid="uid://gilq7elgtrmw"]
 
 [ext_resource type="Texture2D" uid="uid://cm4ilxs0jnlwn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_g2h2n"]
 [ext_resource type="PackedScene" uid="uid://cthkgxtsr4d52" path="res://scenes/characters/player.tscn" id="2_ra442"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bd30xtvii7wbs" path="res://assets/brackeys_platformer_assets/sprites/dustparticle.png" id="4_v5uil"]
 [ext_resource type="PackedScene" uid="uid://do70y7750yog5" path="res://scenes/characters/enemy.tscn" id="5_5722l"]
 [ext_resource type="Script" uid="uid://b5132f2r2x7rq" path="res://scenes/prefabs/gap_puller_x.gd" id="5_dfjjl"]
+[ext_resource type="Script" uid="uid://bsmgrr2cl8gvx" path="res://levels/sinktrigger.gd" id="6_at1ld"]
+[ext_resource type="Script" uid="uid://can01bq7sguqc" path="res://levels/sinkplatform.gd" id="6_sd18g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fiq81"]
 texture = ExtResource("1_g2h2n")
@@ -431,6 +433,420 @@ texture = ExtResource("1_g2h2n")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ep78u")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sd18g"]
+texture = ExtResource("1_g2h2n")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vm7no"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_sd18g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at1ld"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm7no"]
+texture = ExtResource("1_g2h2n")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hbb88"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vm7no")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcjpl"]
+texture = ExtResource("1_g2h2n")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+6:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5orea"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wcjpl")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilhis"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5722l"]
@@ -607,8 +1023,36 @@ position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_ep78u")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Enemyplatform/jumpplatform"]
-tile_map_data = PackedByteArray("AAAaAAwAAAACAAAAAAAbAAwAAAACAAAAAAAcAAwAAAACAAAAAAAdAAwAAAACAAAAAAAeAAwAAAACAAAAAAAfAAwAAAACAAAAAAAaAA0AAAADAAAAAAAaAA4AAAADAAAAAAAaAA8AAAADAAAAAAAaABAAAAADAAAAAAAaABEAAAADAAAAAAAaABIAAAADAAAAAAAaABMAAAADAAAAAAAbAA0AAAADAAAAAAAbAA4AAAADAAAAAAAbAA8AAAADAAAAAAAbABAAAAADAAAAAAAbABEAAAADAAAAAAAbABIAAAADAAAAAAAbABMAAAADAAAAAAAcAA0AAAADAAAAAAAcAA4AAAADAAAAAAAcAA8AAAADAAAAAAAcABAAAAADAAAAAAAcABEAAAADAAAAAAAcABIAAAADAAAAAAAcABMAAAADAAAAAAAdAA0AAAADAAAAAAAdAA4AAAADAAAAAAAdAA8AAAADAAAAAAAdABAAAAADAAAAAAAdABEAAAADAAAAAAAdABIAAAADAAAAAAAdABMAAAADAAAAAAAeAA0AAAADAAAAAAAeAA4AAAADAAAAAAAeAA8AAAADAAAAAAAeABAAAAADAAAAAAAeABEAAAADAAAAAAAeABIAAAADAAAAAAAeABMAAAADAAAAAAAfAA0AAAADAAAAAAAfAA4AAAADAAAAAAAfAA8AAAADAAAAAAAfABAAAAADAAAAAAAfABEAAAADAAAAAAAfABIAAAADAAAAAAAfABMAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAaAAwAAAACAAAAAAAbAAwAAAACAAAAAAAcAAwAAAACAAAAAAAfAAwAAAACAAAAAAAaAA0AAAADAAAAAAAaAA4AAAADAAAAAAAaAA8AAAADAAAAAAAaABAAAAADAAAAAAAaABEAAAADAAAAAAAaABIAAAADAAAAAAAaABMAAAADAAAAAAAbAA0AAAADAAAAAAAbAA4AAAADAAAAAAAbAA8AAAADAAAAAAAbABAAAAADAAAAAAAbABEAAAADAAAAAAAbABIAAAADAAAAAAAbABMAAAADAAAAAAAcAA0AAAADAAAAAAAcAA4AAAADAAAAAAAcAA8AAAADAAAAAAAcABAAAAADAAAAAAAcABEAAAADAAAAAAAcABIAAAADAAAAAAAcABMAAAADAAAAAAAfAA0AAAADAAAAAAAfAA4AAAADAAAAAAAfAA8AAAADAAAAAAAfABAAAAADAAAAAAAfABEAAAADAAAAAAAfABIAAAADAAAAAAAfABMAAAADAAAAAAAgAAwAAAACAAAAAAAgAA0AAAADAAAAAAAgAA4AAAADAAAAAAAgAA8AAAADAAAAAAAgABAAAAADAAAAAAAgABEAAAADAAAAAAAgABIAAAADAAAAAAAgABMAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_dfjjl")
+
+[node name="sinkplatform" type="Node2D" parent="Enemyplatform/jumpplatform"]
+script = ExtResource("6_sd18g")
+sink_distance = 180
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Enemyplatform/jumpplatform/sinkplatform"]
+tile_map_data = PackedByteArray("AAAdAAwAAAACAAAAAAAeAAwAAAACAAAAAAAdAA0AAAADAAAAAAAeAA0AAAADAAAAAAAdAA4AAAADAAAAAAAeAA4AAAADAAAAAAAeAA8AAAADAAAAAAAeABAAAAADAAAAAAAeABEAAAADAAAAAAAeABIAAAADAAAAAAAdABIAAAADAAAAAAAdABMAAAADAAAAAAAeABMAAAADAAAAAAAdAA8AAAADAAAAAAAdABAAAAADAAAAAAAdABEAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_vm7no")
+
+[node name="sinktrigger" type="Area2D" parent="Enemyplatform/jumpplatform" node_paths=PackedStringArray("sinkplatform")]
+position = Vector2(453, 182)
+script = ExtResource("6_at1ld")
+sinkplatform = NodePath("../sinkplatform")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemyplatform/jumpplatform/sinktrigger"]
+shape = SubResource("RectangleShape2D_at1ld")
+
+[node name="gold_ground" type="Node2D" parent="Enemyplatform/jumpplatform"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Enemyplatform/jumpplatform/gold_ground"]
+tile_map_data = PackedByteArray("AAAhAAwAAAACAAAAAAAiAAwAAAACAAAAAAAhAA0AAAADAAAAAAAhAA4AAAADAAAAAAAhAA8AAAADAAAAAAAhABAAAAADAAAAAAAhABEAAAADAAAAAAAhABIAAAADAAAAAAAhABMAAAADAAAAAAAiAA0AAAADAAAAAAAiAA4AAAADAAAAAAAiAA8AAAADAAAAAAAiABAAAAADAAAAAAAiABEAAAADAAAAAAAiABIAAAADAAAAAAAiABMAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_hbb88")
+
+[node name="gold_above" type="Node2D" parent="Enemyplatform/jumpplatform/gold_ground"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Enemyplatform/jumpplatform/gold_ground/gold_above"]
+tile_map_data = PackedByteArray("AAAjAAcAAAACAAAAAAAkAAcAAAACAAAAAAAlAAcAAAACAAAAAAAmAAcAAAACAAAAAAAnAAcAAAACAAAAAAAjAAgAAAADAAAAAAAjAAkAAAADAAAAAAAjAAoAAAADAAAAAAAjAAsAAAADAAAAAAAjAAwAAAADAAAAAAAjAA0AAAADAAAAAAAjAA4AAAADAAAAAAAjAA8AAAADAAAAAAAjABAAAAADAAAAAAAjABEAAAADAAAAAAAjABIAAAADAAAAAAAjABMAAAADAAAAAAAkAAgAAAADAAAAAAAkAAkAAAADAAAAAAAkAAoAAAADAAAAAAAkAAsAAAADAAAAAAAkAAwAAAADAAAAAAAkAA0AAAADAAAAAAAkAA4AAAADAAAAAAAkAA8AAAADAAAAAAAkABAAAAADAAAAAAAkABEAAAADAAAAAAAkABIAAAADAAAAAAAkABMAAAADAAAAAAAlAAgAAAADAAAAAAAlAAkAAAADAAAAAAAlAAoAAAADAAAAAAAlAAsAAAADAAAAAAAlAAwAAAADAAAAAAAlAA0AAAADAAAAAAAlAA4AAAADAAAAAAAlAA8AAAADAAAAAAAlABAAAAADAAAAAAAlABEAAAADAAAAAAAlABIAAAADAAAAAAAlABMAAAADAAAAAAAmAAgAAAADAAAAAAAmAAkAAAADAAAAAAAmAAoAAAADAAAAAAAmAAsAAAADAAAAAAAmAAwAAAADAAAAAAAmAA0AAAADAAAAAAAmAA4AAAADAAAAAAAmAA8AAAADAAAAAAAmABAAAAADAAAAAAAmABEAAAADAAAAAAAmABIAAAADAAAAAAAmABMAAAADAAAAAAAnAAgAAAADAAAAAAAnAAkAAAADAAAAAAAnAAoAAAADAAAAAAAnAAsAAAADAAAAAAAnAAwAAAADAAAAAAAnAA0AAAADAAAAAAAnAA4AAAADAAAAAAAnAA8AAAADAAAAAAAnABAAAAADAAAAAAAnABEAAAADAAAAAAAnABIAAAADAAAAAAAnABMAAAADAAAAAAA=")
+tile_set = SubResource("TileSet_5orea")
 
 [node name="GapTrigger_2" type="Area2D" parent="." node_paths=PackedStringArray("ground_move")]
 position = Vector2(129, 181)
@@ -649,4 +1093,5 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAkAAAAAAAEAAAAAAAkAAAAAAAIAAAAAAAk
 tile_set = SubResource("TileSet_ilhis")
 
 [connection signal="body_entered" from="Enemyplatform/enemyjump" to="Enemyplatform/enemyjump" method="_on_gap_jump_trigger_body_entered"]
+[connection signal="body_entered" from="Enemyplatform/jumpplatform/sinktrigger" to="Enemyplatform/jumpplatform/sinktrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="GapTrigger_2" to="GapTrigger_2" method="_on_body_entered"]
