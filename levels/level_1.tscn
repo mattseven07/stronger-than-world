@@ -142,7 +142,8 @@ texture = ExtResource("2_3sk1a")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ihfcg"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_hn12h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rka8t"]
@@ -298,7 +299,8 @@ texture = ExtResource("4_5ot28")
 2:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5hph3"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_rka8t")
 sources/1 = SubResource("TileSetAtlasSource_j7kpp")
 
@@ -571,7 +573,8 @@ texture = ExtResource("2_3sk1a")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5rr72"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_bjebc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyffv"]
@@ -707,7 +710,8 @@ texture = ExtResource("2_3sk1a")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1pe0h"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_gyffv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hph3"]

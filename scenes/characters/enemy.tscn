@@ -49,9 +49,11 @@ radius = 5.0
 height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2e6v"]
-size = Vector2(118, 13)
+size = Vector2(39, 13)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_fulqv")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -69,7 +71,7 @@ shape = SubResource("CapsuleShape2D_4gyqm")
 [node name="Vision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
-position = Vector2(-58, -7)
+position = Vector2(-18.5, -7)
 shape = SubResource("RectangleShape2D_f2e6v")
 
 [connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]

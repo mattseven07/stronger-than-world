@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var camera := $Camera2D
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D
+@onready var sfx_walk :=$sfx_walk
 
 const SPEED       = 100.0
 const JUMP_VELOCITY = -250.0   # usually a bit stronger feels better
@@ -20,8 +21,10 @@ func _physics_process(delta: float) -> void:
 	
 	if direction != 0:
 		velocity.x = direction * SPEED
+		sfx_walk.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * 2)  # faster stop feels better
+		sfx_walk.stop()
 
 	# ───────────────────────────────────────
 	# Animation logic
