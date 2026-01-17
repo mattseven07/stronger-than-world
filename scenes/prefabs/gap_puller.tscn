@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw4r16q2351n6"]
+
+[ext_resource type="Script" uid="uid://dy6hym4r2lck4" path="res://scripts/gap_puller.gd" id="1_u7dsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3pp2"]
+
+[node name="GapPuller" type="Node2D"]
+script = ExtResource("1_u7dsq")
+
+[node name="GapTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GapTrigger"]
+shape = SubResource("RectangleShape2D_u3pp2")

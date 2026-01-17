@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://do70y7750yog5"]
+
+[ext_resource type="Script" uid="uid://cxvsxe2dfcvuh" path="res://scenes/characters/enemy.gd" id="1_fulqv"]
+[ext_resource type="Texture2D" uid="uid://dkw302cw8qpsq" path="res://assets/brackeys_platformer_assets/sprites/MINION_1.png" id="2_fulqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2e6v"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21x0f"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgk6k"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k4es"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5khh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2e6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21x0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgk6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k4es")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2e6v"]
+size = Vector2(118, 13)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_fulqv")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_x5khh")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.166332
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+shape = SubResource("CapsuleShape2D_4gyqm")
+
+[node name="Vision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
+position = Vector2(-58, -7)
+shape = SubResource("RectangleShape2D_f2e6v")
+
+[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
